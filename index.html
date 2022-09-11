@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        background-color: peachpuff;
+        color: black;
+    }
+</style>
+<body>
+    <h2>Random number comparison</h2>
+    <form onsubmit="per(); return false">
+        num: <input type="number" min="0" max="10" id="p1">
+        <button type="submit">Enter</button>
+    </form>
+    <h2 id="an"></h2>
+    <script>
+        function per()
+        {
+        let num = +document.querySelector("#p1").value
+        let ran = Math.floor(Math.random() * 11);
+        if(num ===ran) {
+            document.querySelector("#an").innerHTML=` ${ran} Guess is right`;
+
+        }
+        else if(num != ran) {
+            document.querySelector("#an").innerHTML=`${ran} Guess is wrong`;
+        }
+        
+        }
+    </script>
+</body>
+</html>
